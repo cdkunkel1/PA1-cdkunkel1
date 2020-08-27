@@ -1,0 +1,13 @@
+D:\Source\Repos\PA1-cdkunkel1\bin\Debug\netcoreapp3.1\PA1-cdkunkel1.exe
+D:\Source\Repos\PA1-cdkunkel1\bin\Debug\netcoreapp3.1\PA1-cdkunkel1.deps.json
+D:\Source\Repos\PA1-cdkunkel1\bin\Debug\netcoreapp3.1\PA1-cdkunkel1.runtimeconfig.json
+D:\Source\Repos\PA1-cdkunkel1\bin\Debug\netcoreapp3.1\PA1-cdkunkel1.runtimeconfig.dev.json
+D:\Source\Repos\PA1-cdkunkel1\bin\Debug\netcoreapp3.1\PA1-cdkunkel1.dll
+D:\Source\Repos\PA1-cdkunkel1\bin\Debug\netcoreapp3.1\PA1-cdkunkel1.pdb
+D:\Source\Repos\PA1-cdkunkel1\obj\Debug\netcoreapp3.1\PA1-cdkunkel1.csprojAssemblyReference.cache
+D:\Source\Repos\PA1-cdkunkel1\obj\Debug\netcoreapp3.1\PA1-cdkunkel1.AssemblyInfoInputs.cache
+D:\Source\Repos\PA1-cdkunkel1\obj\Debug\netcoreapp3.1\PA1-cdkunkel1.AssemblyInfo.cs
+D:\Source\Repos\PA1-cdkunkel1\obj\Debug\netcoreapp3.1\PA1-cdkunkel1.csproj.CoreCompileInputs.cache
+D:\Source\Repos\PA1-cdkunkel1\obj\Debug\netcoreapp3.1\PA1-cdkunkel1.dll
+D:\Source\Repos\PA1-cdkunkel1\obj\Debug\netcoreapp3.1\PA1-cdkunkel1.pdb
+D:\Source\Repos\PA1-cdkunkel1\obj\Debug\netcoreapp3.1\PA1-cdkunkel1.genruntimeconfig.cache

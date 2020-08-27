@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\source\\repos\\PA1-cdkunkel1\\PA1-cdkunkel1.csproj": {}
+    "D:\\Source\\Repos\\PA1-cdkunkel1\\PA1-cdkunkel1.csproj": {}
   },
   "projects": {
-    "D:\\source\\repos\\PA1-cdkunkel1\\PA1-cdkunkel1.csproj": {
+    "D:\\Source\\Repos\\PA1-cdkunkel1\\PA1-cdkunkel1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\source\\repos\\PA1-cdkunkel1\\PA1-cdkunkel1.csproj",
+        "projectUniqueName": "D:\\Source\\Repos\\PA1-cdkunkel1\\PA1-cdkunkel1.csproj",
         "projectName": "PA1-cdkunkel1",
-        "projectPath": "D:\\source\\repos\\PA1-cdkunkel1\\PA1-cdkunkel1.csproj",
+        "projectPath": "D:\\Source\\Repos\\PA1-cdkunkel1\\PA1-cdkunkel1.csproj",
         "packagesPath": "C:\\Users\\Cory\\.nuget\\packages\\",
-        "outputPath": "D:\\source\\repos\\PA1-cdkunkel1\\obj\\",
+        "outputPath": "D:\\Source\\Repos\\PA1-cdkunkel1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cory\\AppData\\Roaming\\NuGet\\NuGet.Config"
