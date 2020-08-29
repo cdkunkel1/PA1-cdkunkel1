@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PA1_cdkunkel1
 {
@@ -7,6 +8,7 @@ namespace PA1_cdkunkel1
         static void Main(string[] args)
         {
             int menuChoice = 0;
+            List<Post> posts = PostFile.GetPosts();
             while (menuChoice != 4)
             {
                 DisplayMenu();
@@ -21,7 +23,7 @@ namespace PA1_cdkunkel1
                 }
                 finally
                 {
-                    SelectMenuOption(menuChoice);
+                    SelectMenuOption(menuChoice, posts);
                 }
         }
 
@@ -51,11 +53,11 @@ namespace PA1_cdkunkel1
             }             
         }
 
-        static void SelectMenuOption(int menuChoice)
+        static void SelectMenuOption(int menuChoice, List<Post> posts)
         {
             if (menuChoice == 1)
             {
-                System.Console.WriteLine("Sup");
+                PostUtils.PrintAllPosts(posts);
             }
             else if (menuChoice == 2)
             {
