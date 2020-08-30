@@ -68,6 +68,7 @@ namespace PA1_cdkunkel1
             {
                 System.Console.WriteLine("What message would you like to post?\n");
                 AddMessage(posts); //Gets and adds the user's message
+                PostFile.SaveAllPosts(posts); //Save back to the file
                 AskToContinue();
             }
             else if (menuChoice == 3) //User deletes a post
@@ -75,6 +76,7 @@ namespace PA1_cdkunkel1
                 posts.Sort(Post.CompareByDatestamp); //Sorts posts by datestamp
                 PostUtils.PrintAllPosts(posts); //Prints all posts for user to pick from
                 DeleteMessage(posts); //User selects and deletes a message
+                PostFile.SaveAllPosts(posts); //Save back to the file
                 AskToContinue();
             }
         }
