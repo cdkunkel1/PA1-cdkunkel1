@@ -14,7 +14,7 @@ namespace PA1_cdkunkel1
                 DisplayMenu();
                 try 
                 {
-                    menuChoice = GetMenuChoice();
+                    menuChoice = GetInt();
                     CheckChoice(menuChoice);
                 }
                 catch(Exception e)
@@ -36,7 +36,7 @@ namespace PA1_cdkunkel1
             System.Console.WriteLine("4. Exit\n");
         }
 
-        static int GetMenuChoice() 
+        static int GetInt() 
         {
             return int.Parse(Console.ReadLine());
         }
@@ -69,7 +69,10 @@ namespace PA1_cdkunkel1
             }
             else if (menuChoice == 3)
             {
-                System.Console.WriteLine("Esketit");
+                posts.Sort(Post.CompareByDatestamp);
+                PostUtils.PrintAllPosts(posts);
+                DeleteMessage(posts);
+                AskToContinue();
             }
         }
 
@@ -87,6 +90,48 @@ namespace PA1_cdkunkel1
             {
                 System.Console.WriteLine(e.Message);
             }
+        }
+
+        static void DeleteMessage(List<Post> posts)
+        {
+            Boolean exists = false; //Changes to true if the ID is found
+            int userChoice = 0;
+            System.Console.WriteLine("\nPlease enter the post ID of the message you would like to delete\n"); //Ask the user for input
+            try
+            {
+                userChoice = GetInt(); //Get the user's choice
+                exists = LoopThroughPosts(userChoice, posts);
+                if (exists == true) //Exits the function if exists is true
+                {
+                    Console.Clear();
+                    System.Console.WriteLine("The post has been deleted");
+                }
+                else
+                {
+                    Console.Clear();
+                    System.Console.WriteLine("That ID does not exist");
+                } 
+            }
+            catch(Exception e)
+            {
+                Console.Clear();
+                System.Console.WriteLine(e.Message);
+            }
+        }
+
+        static Boolean LoopThroughPosts(int userChoice, List<Post> posts)
+        {
+            Boolean exists = false;
+            foreach(Post post in posts) //Loop through each post
+            {
+                if (userChoice == post.ID) //Checks to see if the ID matches any of the posts
+                {
+                    posts.Remove(post); //Removes the post and exists becomes true
+                    exists = true;
+                    return exists; //Exits the loop if the value is found
+                }
+            }
+            return exists;
         }
 
         static void AskToContinue()
