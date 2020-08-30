@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PA1_cdkunkel1
 {
@@ -7,8 +8,11 @@ namespace PA1_cdkunkel1
     {
         static void Main(string[] args)
         {
+            int postCount = 0;
             int menuChoice = 0;
             List<Post> posts = PostFile.GetPosts(); //Reads the posts from a file
+            posts.Sort(Post.CompareByID); //Sorts posts by ID
+            postCount = posts.Last().ID; //Find the largest ID
             while (menuChoice != 4) //Runs until the user inputs 4 to exit
             {
                 DisplayMenu();
@@ -23,7 +27,7 @@ namespace PA1_cdkunkel1
                 }
                 finally //Checks the menu options regardless
                 {
-                    SelectMenuOption(menuChoice, posts);
+                    SelectMenuOption(menuChoice, posts, ref postCount);
                 }
         }
 
@@ -56,7 +60,7 @@ namespace PA1_cdkunkel1
         }
 
         //Selects a function based on the user's menu choice
-        static void SelectMenuOption(int menuChoice, List<Post> posts)
+        static void SelectMenuOption(int menuChoice, List<Post> posts, ref int postCount)
         {
             if (menuChoice == 1) //Prints all posts for the user
             {
@@ -67,7 +71,7 @@ namespace PA1_cdkunkel1
             else if (menuChoice == 2) //User adds a new post
             {
                 System.Console.WriteLine("What message would you like to post?\n");
-                AddMessage(posts); //Gets and adds the user's message
+                AddMessage(posts, ref postCount); //Gets and adds the user's message
                 PostFile.SaveAllPosts(posts); //Save back to the file
                 AskToContinue();
             }
@@ -82,13 +86,14 @@ namespace PA1_cdkunkel1
         }
 
         //Used to add a post
-        static void AddMessage(List<Post> posts)
+        static void AddMessage(List<Post> posts, ref int postCount)
         {
             string message = "";
             try 
             {
                 message = Console.ReadLine(); //Message is input from the user
-                posts.Add(new Post(){ID = (posts.Count + 1), Text = message, Datestamp = DateTime.Now}); //ID is based on the count of current messages, datetime takes the current time
+                posts.Add(new Post(){ID = (postCount + 1), Text = message, Datestamp = DateTime.Now}); //ID is based on the count of current messages, datetime takes the current time
+                postCount++; //Increment the post count tally
                 Console.Clear();
                 System.Console.WriteLine("Your message has been added"); //Confirm to the user that the message has been added
             }

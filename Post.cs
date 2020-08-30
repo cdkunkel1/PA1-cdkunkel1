@@ -13,6 +13,12 @@ namespace PA1_cdkunkel1
         {
             return x.Datestamp.CompareTo(y.Datestamp);
         }
+
+        //Compares by ID for sorting
+        public static int CompareByID(Post x, Post y)
+        {
+            return x.ID.CompareTo(y.ID);
+        }
         
         public override string ToString()
         {
