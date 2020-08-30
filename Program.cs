@@ -57,16 +57,31 @@ namespace PA1_cdkunkel1
         {
             if (menuChoice == 1)
             {
+                posts.Sort(Post.CompareByDatestamp);
                 PostUtils.PrintAllPosts(posts);
+                AskToContinue();
             }
             else if (menuChoice == 2)
             {
-               System.Console.WriteLine("Howdy");
+                string message = "";
+                System.Console.WriteLine("What message would you like to post?\n");
+                message = Console.ReadLine();
+                posts.Add(new Post(){ID = (posts.Count + 1), Text = message, Datestamp = DateTime.Now});
+                Console.Clear();
+                System.Console.WriteLine("Your message has been added");
+                AskToContinue();
             }
             else if (menuChoice == 3)
             {
                 System.Console.WriteLine("Esketit");
             }
+        }
+
+        static void AskToContinue()
+        {
+            System.Console.WriteLine("\nPress any key to continue");
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }
