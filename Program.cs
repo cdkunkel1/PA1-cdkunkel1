@@ -55,25 +55,37 @@ namespace PA1_cdkunkel1
 
         static void SelectMenuOption(int menuChoice, List<Post> posts)
         {
-            if (menuChoice == 1)
+            if (menuChoice == 1) //Prints all posts for the user
             {
                 posts.Sort(Post.CompareByDatestamp);
                 PostUtils.PrintAllPosts(posts);
                 AskToContinue();
             }
-            else if (menuChoice == 2)
+            else if (menuChoice == 2) //User adds a new post
             {
-                string message = "";
                 System.Console.WriteLine("What message would you like to post?\n");
-                message = Console.ReadLine();
-                posts.Add(new Post(){ID = (posts.Count + 1), Text = message, Datestamp = DateTime.Now});
-                Console.Clear();
-                System.Console.WriteLine("Your message has been added");
+                AddMessage(posts);
                 AskToContinue();
             }
             else if (menuChoice == 3)
             {
                 System.Console.WriteLine("Esketit");
+            }
+        }
+
+        static void AddMessage(List<Post> posts)
+        {
+            string message = "";
+            try 
+            {
+                message = Console.ReadLine(); //Message is input
+                posts.Add(new Post(){ID = (posts.Count + 1), Text = message, Datestamp = DateTime.Now}); //ID is based on the count of current messages, datetime takes the current time
+                Console.Clear();
+                System.Console.WriteLine("Your message has been added"); //Confirm to the user that the message has been added
+            }
+            catch(Exception e)
+            {
+                System.Console.WriteLine(e.Message);
             }
         }
 
