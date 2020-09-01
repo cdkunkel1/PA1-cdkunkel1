@@ -15,6 +15,7 @@ namespace PA1_cdkunkel1
             postCount = posts.Last().ID; //Find the largest ID
             while (menuChoice != 4) //Runs until the user inputs 4 to exit
             {
+                menuChoice = 0;
                 DisplayMenu();
                 try 
                 {
