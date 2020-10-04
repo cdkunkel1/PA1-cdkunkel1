@@ -11,7 +11,7 @@ namespace PA1_cdkunkel1
         //Compares by Datestamp for sorting
         public static int CompareByDatestamp(Post x, Post y)
         {
-            return x.Datestamp.CompareTo(y.Datestamp);
+            return y.Datestamp.CompareTo(x.Datestamp);
         }
 
         //Compares by ID for sorting
